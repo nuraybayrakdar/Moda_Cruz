@@ -1,0 +1,7 @@
+﻿<Application
+    x:Class="Moda_Cruz.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Moda_Cruz.UWP">
+
+</Application>
