@@ -1,12 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Moda_Cruz.Views.SearchTab">
+            xmlns:local="clr-namespace:Moda_Cruz.Views"
+             x:Class="Moda_Cruz.Views.SearchTab" BackgroundColor="AliceBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10">
+
+            <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
+                       HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="DarkGray" 
+                       TextChanged="searchbar2TextChanged"/>
+            <Grid BackgroundColor="AliceBlue" >
+                <CollectionView x:Name="Urunlerim2" >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="5"
+                                         VerticalItemSpacing="5" Span="2"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White" Margin="5"   Padding="5">
+                                <StackLayout Margin="5">
+                                    <Image Source="{Binding Image}" HeightRequest="180" />
+                                    <Grid Margin="20,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions >
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                        </Grid>
+                                        <Label Text="{Binding Name}"   Grid.Row="0" Grid.Column="0" TextColor="Black"   FontSize="Header" />
+                                        <Label Text="{Binding Color}"   Grid.Row="0" Grid.Column="1" TextColor="Black"   />
+                                        <Label Text="{Binding Size}" Grid.Row="1" Grid.Column="0" TextColor="Black" VerticalOptions="Start"/>
+                                        <Label Text="{Binding Price}"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black"/>
+                                        <ImageButton x:Name="Sepetimde" Source="sepet.png" Grid.Row="2" Grid.Column="0"
+                                                     HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="Start"
+                                                    />
+                                        <ImageButton x:Name="Favorile" Source="kalp.png" Grid.Row="2" Grid.Column="1" HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="Start"/>
+                                    </Grid>
+
+
+
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
