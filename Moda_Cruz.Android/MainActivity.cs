@@ -2,8 +2,11 @@
 
 using Android.App;
 using Android.Content.PM;
+using Android.Widget;
+using Android.Views;
 using Android.Runtime;
 using Android.OS;
+
 
 namespace Moda_Cruz.Droid
 {
@@ -16,6 +19,7 @@ namespace Moda_Cruz.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

@@ -104,9 +104,35 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\anasayfa.png" />
+    <Content Include="Assets\arama.png" />
+    <Content Include="Assets\ayakkabi1.jpeg" />
+    <Content Include="Assets\ayakkabi2.jpeg" />
+    <Content Include="Assets\ceket1.jpeg" />
+    <Content Include="Assets\ceket2.jpeg" />
+    <Content Include="Assets\ceket3.jpeg" />
+    <Content Include="Assets\elbise1.jpeg" />
+    <Content Include="Assets\elbise2.jpeg" />
+    <Content Include="Assets\favori.png" />
+    <Content Include="Assets\giris.jpeg" />
+    <Content Include="Assets\gomlek1.jpeg" />
+    <Content Include="Assets\gomlek2.jpeg" />
+    <Content Include="Assets\gomlek3.jpeg" />
+    <Content Include="Assets\gomlek4.jpeg" />
+    <Content Include="Assets\kalem.png" />
+    <Content Include="Assets\kalp.png" />
+    <Content Include="Assets\kamera.png" />
+    <Content Include="Assets\kazak.jpeg" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\mesaj.png" />
+    <Content Include="Assets\pant1.jpeg" />
+    <Content Include="Assets\Pant1.png" />
+    <Content Include="Assets\pant2.jpeg" />
+    <Content Include="Assets\pant3.jpeg" />
+    <Content Include="Assets\profil.png" />
+    <Content Include="Assets\sepet.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />
     <Content Include="Assets\SmallTile.scale-400.png" />
@@ -128,6 +154,12 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\tisort1.jpeg" />
+    <Content Include="Assets\tisort2.jpeg" />
+    <Content Include="Assets\user1.jpeg" />
+    <Content Include="Assets\user2.jpeg" />
+    <Content Include="Assets\user3.jpeg" />
+    <Content Include="Assets\user4.jpeg" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
@@ -144,9 +176,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12"/>
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="NETStandard.Library">
+      <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.13" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
+    <PackageReference Include="Xamarin.Forms.PancakeView">
+      <Version>2.3.0.759</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Moda_Cruz\Moda_Cruz.csproj">
