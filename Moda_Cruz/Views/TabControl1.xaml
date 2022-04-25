@@ -1,9 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Moda_Cruz.Views.TabControl1">
-  <!--Pages can be added as references or inline-->
-  <ContentPage Title="Tab 1" />
-  <ContentPage Title="Tab 2" />
-  <ContentPage Title="Tab 3" />
+             x:Class="Moda_Cruz.Views.TabControl1"
+            xmlns:local="clr-namespace:Moda_Cruz.Views"
+            NavigationPage.HasNavigationBar="False"
+            BarBackgroundColor="White"
+            SelectedTabColor="DeepPink"
+            UnselectedTabColor="DarkGray" 
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+            android:TabbedPage.ToolbarPlacement="Bottom">
+
+
+    <!--Pages can be added as references or inline-->
+    <local:HomeTab  IconImageSource="anasayfa.png"/>
+    <local:SearchTab  IconImageSource="arama.png"/>
+    <local:FavoriTab  IconImageSource="favori.png"/>
+    <local:ActivityTab  IconImageSource="mesaj.png"/>
+    <local:ProfileTab  IconImageSource="profil.png"/>
 </TabbedPage>

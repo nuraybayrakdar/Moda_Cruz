@@ -16,5 +16,13 @@ namespace Moda_Cruz.Views
         {
             InitializeComponent();
         }
+        async void UyeClicked(object o, EventArgs args)
+        {
+            await Navigation.PushModalAsync(new TabControl1());
+        }
+        async void GirisClicked(object o, EventArgs args)
+        {
+            await Navigation.PushModalAsync(new TabControl1());
+        }
     }
 }

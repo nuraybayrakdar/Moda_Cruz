@@ -1,12 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Moda_Cruz.Views.LoginView">
+             xmlns:helpers="clr-namespace:Moda_Cruz.Helpers"
+             x:Class="Moda_Cruz.Views.LoginView" BackgroundColor="White">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Padding="20" VerticalOptions="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" VerticalOptions="Center" >
+                <Label Text="Akıllı Kadınların Akıllı Modasına Hoşgeldin!" TextColor="DeepPink" 
+                       FontFamily="CabinSketch" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Image Source="giris.jpeg"  
+                       WidthRequest="400" HeightRequest="300"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Spacing="10" >
+                <Button Text="Facebook ile Üye Ol" TextColor="White" BackgroundColor="MidnightBlue" WidthRequest="300" HeightRequest="50" VerticalOptions="CenterAndExpand"/>
+                <Entry Placeholder="Kullanıcı Adı" Text="{Binding Username}"  
+                        HeightRequest="50" WidthRequest="400"/>
+                <Entry Placeholder="Şifre" Text="{Binding Password}" IsPassword="True" 
+                       HeightRequest="50" WidthRequest="400"/>
+
+                <Button x:Name="uyoOlButonu"  Text="Üye Ol"  BackgroundColor="White" TextColor="DeepPink" 
+                        WidthRequest="400" HeightRequest="50" BorderColor="DeepPink" Clicked="UyeClicked"/>
+
+                <Button x:Name="girisButonu"  Text="Giriş Yap"  BackgroundColor="White" TextColor="DeepPink" 
+                        WidthRequest="400" HeightRequest="50" BorderColor="DeepPink" Clicked="GirisClicked"/>
+
+
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
