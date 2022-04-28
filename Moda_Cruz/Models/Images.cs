@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Moda_Cruz.Views
+namespace Moda_Cruz.Models
 {
-    class Image
+    class Images
     {
         public string Title { get; set; }
         public string Url { get; set; }

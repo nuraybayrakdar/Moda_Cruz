@@ -8,9 +8,9 @@
 
             <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
                        HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="DarkGray" 
-                       TextChanged="searchbar2TextChanged"/>
-            <Grid BackgroundColor="AliceBlue" >
-                <CollectionView x:Name="Urunlerim2" >
+                       />
+            <Grid BackgroundColor="AliceBlue">
+                <CollectionView ItemsSource="UrunlerList" >
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="5"
                                          VerticalItemSpacing="5" Span="2"/>

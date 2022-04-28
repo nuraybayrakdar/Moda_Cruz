@@ -1,12 +1,16 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:Moda_Cruz.Views" xmlns:bc="clr-namespace:Moda_Cruz.ViewModels"
              x:Class="Moda_Cruz.Views.HomeTab" BackgroundColor="AliceBlue">
+    <ContentPage.BindingContext>
+        <bc:UrunlerViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
+        
         <StackLayout Margin="10" Padding="5">
 
             <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
                        HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="DarkGray" 
-                       TextChanged="searchbar1TextChanged"/>
+                       />
 
             <CarouselView x:Name="Carousel" IndicatorView="IndicatorView"  Margin="5" HeightRequest="350" WidthRequest="350">
                 <CarouselView.ItemTemplate >
@@ -20,7 +24,7 @@
             <IndicatorView x:Name="IndicatorView" IndicatorColor="LightPink" 
                    SelectedIndicatorColor="DeepPink" IndicatorSize="10"/>
             <Grid BackgroundColor="AliceBlue" >
-                <CollectionView x:Name="Urunlerim" >
+                <CollectionView ItemsSource="{Binding UrunlerList}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="5"
                                          VerticalItemSpacing="5" Span="2"/>
