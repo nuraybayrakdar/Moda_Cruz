@@ -88,6 +88,8 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -108,6 +110,7 @@
     <Content Include="Assets\arama.png" />
     <Content Include="Assets\ayakkabi1.jpeg" />
     <Content Include="Assets\ayakkabi2.jpeg" />
+    <Content Include="Assets\backIcon.png" />
     <Content Include="Assets\ceket1.jpeg" />
     <Content Include="Assets\ceket2.jpeg" />
     <Content Include="Assets\ceket3.jpeg" />

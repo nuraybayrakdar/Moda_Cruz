@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moda_Cruz.Views.ProducDetailPage" 
+             xmlns:bc="clr-namespace:Moda_Cruz.ViewModels" BackgroundColor="AliceBlue">
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" >
+            <Frame BackgroundColor="White" Margin="5"   Padding="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                <StackLayout Margin="5">
+                    <Grid Margin="10,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="70"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <ImageButton x:Name="BackButton"  Clicked="BackButtonClicked" Source="backIcon2.png" 
+                                     Grid.Row="0" Grid.Column="0" HeightRequest="35" WidthRequest="35" BackgroundColor="Transparent"/>
+                        <Frame BorderColor="Black" CornerRadius="50" HeightRequest="40" WidthRequest="40" 
+                               Grid.Column="1" Grid.Row="0" IsClippedToBounds="True" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Image x:Name="DetailOwnerPhoto" WidthRequest="250" HeightRequest="250" Aspect="AspectFill" Margin="-20"/>
+                        </Frame>
+                        <Label x:Name="DetailOwner" Grid.Row="0" Grid.Column="2" FontAttributes="Bold" FontSize="Medium" FontFamily="CabinSketch" VerticalTextAlignment="Start"/>
+                        
+                        
+                        <Button Grid.Row="0" Grid.Column="3"   ImageSource="sepet.png" BackgroundColor="Transparent" 
+                                Clicked="SepeteEkle" HeightRequest="35" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="White" Margin="5"   Padding="5" CornerRadius="5">
+                <StackLayout Margin="5">
+                    <Image x:Name="DetailImage" HeightRequest="350" />
+                    <Grid Margin="20,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <Label x:Name="DetailName"   Grid.Row="0" Grid.Column="0" TextColor="Black"   FontSize="Medium" />
+                        <Label x:Name="DetailRenk"   Grid.Row="0" Grid.Column="1" TextColor="Black"   />
+                        <Label x:Name="DetailBeden" Grid.Row="1" Grid.Column="0" TextColor="Black" VerticalOptions="Start"/>
+                        <Label x:Name="DetailPrice" Grid.Row="2" Grid.Column="1" FontAttributes="Bold" TextColor="Black"/>
+                        <Label x:Name="DetailDurum"  Grid.Row="2" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black"/>
+                        <Label x:Name="DetailGender"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black"/>
+                    </Grid>
+                    <Label x:Name="DetailDesc"  TextColor="Black" FontSize="Body" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="10" Margin="5" Padding="5" BackgroundColor="DeepPink" HasShadow="True" HeightRequest="50">
+                <Button Clicked="SepeteEkle" BackgroundColor="DeepPink" Text="Sepete Ekle" TextColor="White" FontAttributes="Bold"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

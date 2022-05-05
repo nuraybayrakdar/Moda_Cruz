@@ -1,18 +1,21 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:Moda_Cruz.Views" xmlns:bc="clr-namespace:Moda_Cruz.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:bc="clr-namespace:Moda_Cruz.ViewModels"
              x:Class="Moda_Cruz.Views.HomeTab" BackgroundColor="AliceBlue">
     <ContentPage.BindingContext>
         <bc:UrunlerViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        
         <StackLayout Margin="10" Padding="5">
-
-            <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
-                       HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="DarkGray" 
-                       />
-
-            <CarouselView x:Name="Carousel" IndicatorView="IndicatorView"  Margin="5" HeightRequest="350" WidthRequest="350">
+            <Grid  Margin="20,0,0,0">
+                <Frame BackgroundColor="White" >
+                    <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
+                              TextColor="DarkGray" VerticalOptions="CenterAndExpand" Margin="-20"
+                              TextChanged="Searchbar1TextChanged" Grid.Row="0" Grid.Column="0"/>
+                </Frame>
+            </Grid>
+            
+            <CarouselView x:Name="Carousel" IndicatorView="IndicatorView"  Margin="20" HeightRequest="350" WidthRequest="350" >
                 <CarouselView.ItemTemplate >
                     <DataTemplate>
                         <StackLayout>
@@ -24,7 +27,7 @@
             <IndicatorView x:Name="IndicatorView" IndicatorColor="LightPink" 
                    SelectedIndicatorColor="DeepPink" IndicatorSize="10"/>
             <Grid BackgroundColor="AliceBlue" >
-                <CollectionView ItemsSource="{Binding UrunlerList}">
+                <CollectionView ItemsSource="{Binding UrunlerList}" x:Name="cv2" SelectionMode="Single" SelectionChanged="ProductSelection">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="5"
                                          VerticalItemSpacing="5" Span="2"/>
@@ -52,18 +55,13 @@
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
                                         </Grid>
-                                        <Label Text="{Binding Name}"   Grid.Row="0" Grid.Column="0" TextColor="Black"   FontSize="Header" />
-                                        <Label Text="{Binding Color}"   Grid.Row="0" Grid.Column="1" TextColor="Black"   />
-                                        <Label Text="{Binding Size}" Grid.Row="1" Grid.Column="0" TextColor="Black" VerticalOptions="Start"/>
-                                        <Label Text="{Binding Price}"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black"/>
-                                        <ImageButton x:Name="Sepetle"  Source="sepet.png" Grid.Row="2" Grid.Column="0" HeightRequest="30" WidthRequest="30" 
-                                                     VerticalOptions="Start" HorizontalOptions="Start" />
+                                        <Label Text="{Binding Name}"   Grid.Row="0" Grid.Column="0" TextColor="Black"  />
+                                        <Label Text="{Binding Beden}" Grid.Row="0" Grid.Column="1" TextColor="Black" VerticalOptions="Start" VerticalTextAlignment="End"/>
+                                        <Label Text="{Binding Price}"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black" VerticalTextAlignment="End"/>
+                                        <Label Text="{Binding Durum}"  Grid.Row="1" Grid.Column="0" VerticalOptions="Start" TextColor="Black"/>
                                         <ImageButton x:Name="Favorile"  Source="kalp.png" Grid.Row="2" Grid.Column="1" HeightRequest="30" WidthRequest="30" 
                                                      VerticalOptions="Start" HorizontalOptions="Start"/>
                                     </Grid>
-
-
-
                                 </StackLayout>
                             </Frame>
                         </DataTemplate>
@@ -72,6 +70,4 @@
             </Grid>
         </StackLayout>
     </ContentPage.Content>
-
-
 </ContentPage>

@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:local="clr-namespace:Moda_Cruz.Views"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
+             xmlns:bc="clr-namespace:Moda_Cruz.ViewModels"
              x:Class="Moda_Cruz.Views.SearchTab" BackgroundColor="AliceBlue">
+    <ContentPage.BindingContext>
+        <bc:UrunlerViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Margin="10">
 
-            <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
+            <SearchBar x:Name="Search1" Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
                        HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="DarkGray" 
-                       />
+                       TextChanged="SearchBar2Text" />
             <Grid BackgroundColor="AliceBlue">
-                <CollectionView ItemsSource="UrunlerList" >
+                <CollectionView ItemsSource="{Binding UrunlerList}" x:Name="cv" SelectionMode="Single" SelectionChanged="ProductSelection2" >
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="5"
                                          VerticalItemSpacing="5" Span="2"/>
@@ -38,18 +41,13 @@
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
                                         </Grid>
-                                        <Label Text="{Binding Name}"   Grid.Row="0" Grid.Column="0" TextColor="Black"   FontSize="Header" />
-                                        <Label Text="{Binding Color}"   Grid.Row="0" Grid.Column="1" TextColor="Black"   />
-                                        <Label Text="{Binding Size}" Grid.Row="1" Grid.Column="0" TextColor="Black" VerticalOptions="Start"/>
-                                        <Label Text="{Binding Price}"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black"/>
-                                        <ImageButton x:Name="Sepetimde" Source="sepet.png" Grid.Row="2" Grid.Column="0"
-                                                     HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="Start"
-                                                    />
+                                        <Label Text="{Binding Name}"   Grid.Row="0" Grid.Column="0" TextColor="Black"  />
+                                        <Label Text="{Binding Renk}"  Grid.Row="0" Grid.Column="1" TextColor="Black" VerticalTextAlignment="End"/>
+                                        <Label Text="{Binding Beden}" Grid.Row="1" Grid.Column="0" TextColor="Black" />
+                                        <Label Text="{Binding Price}"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" TextColor="Black"/>
+                                       
                                         <ImageButton x:Name="Favorile" Source="kalp.png" Grid.Row="2" Grid.Column="1" HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="Start"/>
                                     </Grid>
-
-
-
                                 </StackLayout>
                             </Frame>
                         </DataTemplate>
