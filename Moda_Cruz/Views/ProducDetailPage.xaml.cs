@@ -37,8 +37,16 @@ namespace Moda_Cruz.Views
         public async void SepeteEkle(object sender, EventArgs args)
         {
             await Navigation.PushModalAsync(new SepetView(DetailImage.Source,DetailName.Text,DetailPrice.Text,DetailOwner.Text, DetailRenk.Text, DetailDurum.Text, DetailBeden.Text));
-            new SepetView(DetailImage.Source, DetailName.Text, DetailPrice.Text, DetailOwner.Text,DetailRenk.Text,DetailDurum.Text,DetailBeden.Text);
+           // new SepetView(DetailImage.Source, DetailName.Text, DetailPrice.Text, DetailOwner.Text,DetailRenk.Text,DetailDurum.Text,DetailBeden.Text);
         }
+        public async void FavorilereEkle(object sender, EventArgs args)
+        {
+
+           // FavorilerViewModel.GetFavUrunlerList(DetailImage.Source, DetailName.Text, DetailPrice.Text, DetailOwner.Text, DetailRenk.Text, DetailDurum.Text, DetailBeden.Text);
+            await Navigation.PushModalAsync(new FavoriTab(DetailImage.Source, DetailName.Text, DetailPrice.Text, DetailOwner.Text, DetailRenk.Text, DetailDurum.Text, DetailBeden.Text));
+            
+        }
+
 
     }
 }

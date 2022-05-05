@@ -23,7 +23,7 @@ namespace Moda_Cruz.Views
 			SepetRenk.Text = "Renk" + Renk;
 			SepetDurum.Text = Durum;
 			SepetTutar.Text = "Toplam: " + Price;
-			SepetBeden.Text = "Beden: "+Beden;
+			SepetBeden.Text = "Beden: " + Beden;
 		}
 		
 	}

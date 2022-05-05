@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame CornerRadius="5" HasShadow="True" BackgroundColor="White">
-                <Label Text="Sepetim" TextColor="DeepPink" FontSize="Medium" VerticalTextAlignment="Center"/>
+                <Label Text="Sepetim" TextColor="DeepPink" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Frame>
             <Frame BackgroundColor="White" Margin="5"   Padding="5" CornerRadius="5">
                 <StackLayout Margin="5">

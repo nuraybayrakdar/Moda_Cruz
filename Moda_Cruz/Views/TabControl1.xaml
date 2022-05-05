@@ -14,7 +14,6 @@
     <!--Pages can be added as references or inline-->
     <local:HomeTab  IconImageSource="anasayfa.png"/>
     <local:SearchTab  IconImageSource="arama.png"/>
-    <local:FavoriTab  IconImageSource="favori.png"/>
     <local:ActivityTab  IconImageSource="mesaj.png"/>
     <local:ProfileTab  IconImageSource="profil.png"/>
 </TabbedPage>

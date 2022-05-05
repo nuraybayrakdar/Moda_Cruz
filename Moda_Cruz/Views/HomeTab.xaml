@@ -59,8 +59,7 @@
                                         <Label Text="{Binding Beden}" Grid.Row="0" Grid.Column="1" TextColor="Black" VerticalOptions="Start" VerticalTextAlignment="End"/>
                                         <Label Text="{Binding Price}"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black" VerticalTextAlignment="End"/>
                                         <Label Text="{Binding Durum}"  Grid.Row="1" Grid.Column="0" VerticalOptions="Start" TextColor="Black"/>
-                                        <ImageButton x:Name="Favorile"  Source="kalp.png" Grid.Row="2" Grid.Column="1" HeightRequest="30" WidthRequest="30" 
-                                                     VerticalOptions="Start" HorizontalOptions="Start"/>
+                                        
                                     </Grid>
                                 </StackLayout>
                             </Frame>

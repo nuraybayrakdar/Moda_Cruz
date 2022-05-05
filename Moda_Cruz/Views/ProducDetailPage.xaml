@@ -74,7 +74,13 @@
                 </StackLayout>
             </Frame>
             <Frame CornerRadius="10" Margin="5" Padding="5" BackgroundColor="DeepPink" HasShadow="True" HeightRequest="50">
-                <Button Clicked="SepeteEkle" BackgroundColor="DeepPink" Text="Sepete Ekle" TextColor="White" FontAttributes="Bold"/>
+                <Grid>
+                    <Button Clicked="SepeteEkle" BackgroundColor="DeepPink" Text="Sepete Ekle"
+                            TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                    <Button Clicked="FavorilereEkle" BackgroundColor="DeepPink" Text="Favorilere Ekle" Margin="5"
+                            TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                </Grid>
+                
             </Frame>
         </StackLayout>
     </ContentPage.Content>

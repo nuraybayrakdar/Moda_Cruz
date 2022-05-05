@@ -16,8 +16,6 @@ namespace Moda_Cruz.Views
     
     public partial class HomeTab : ContentPage
     {
-        
-
         public HomeTab()
         {
             InitializeComponent();
@@ -45,8 +43,5 @@ namespace Moda_Cruz.Views
             await Navigation.PushModalAsync(new ProducDetailPage(itemSelected));
                     
         }
-        
-
-       
     }
 }
