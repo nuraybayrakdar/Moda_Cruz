@@ -8,10 +8,18 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Margin="10">
+            <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Grid.Row="0" >
+                    <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
+                              TextColor="DarkGray" VerticalOptions="CenterAndExpand" Margin="-20"
+                              TextChanged="SearchBar2Text"  />
+            </Frame>
+            <Frame BackgroundColor="White" HasShadow="True">
+                <Grid>
+                    <Button Margin="-20" Text="Filtrele" BackgroundColor="White" Clicked="GoToFilterView" Grid.Row="0" />
+                </Grid>
 
-            <SearchBar x:Name="Search1" Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
-                       HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="DarkGray" 
-                       TextChanged="SearchBar2Text" />
+            </Frame>
+
             <Grid BackgroundColor="AliceBlue">
                 <CollectionView ItemsSource="{Binding UrunlerList}" x:Name="cv" SelectionMode="Single" SelectionChanged="ProductSelection2" >
                     <CollectionView.ItemsLayout>

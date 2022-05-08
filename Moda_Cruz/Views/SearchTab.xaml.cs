@@ -14,7 +14,6 @@ namespace Moda_Cruz.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchTab : ContentPage
     {
-       
         public SearchTab()
         {
             InitializeComponent();
@@ -22,14 +21,18 @@ namespace Moda_Cruz.Views
         }
         void SearchBar2Text(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-            cv.ItemsSource = UrunlerViewModel.GetUrunlerList().Where(s => s.Name.StartsWith(e.NewTextValue)).ToList();
+            cv.ItemsSource = UrunlerViewModel.GetUrunlerList().Where(s => s.Name.ToLower().StartsWith(e.NewTextValue)).ToList();
         }
         private async void ProductSelection2(object sender, SelectionChangedEventArgs e)
         {
             var itemSelected = e.CurrentSelection[0] as Urunler;
             await Navigation.PushModalAsync(new ProducDetailPage(itemSelected));
-
         }
+        public async void GoToFilterView(object sender,EventArgs e)
+        {
+            await Navigation.PushModalAsync(new FilteringView());
+        }
+
 
     }
 }

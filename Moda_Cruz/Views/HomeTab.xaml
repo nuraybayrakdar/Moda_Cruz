@@ -6,14 +6,10 @@
         <bc:UrunlerViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout Margin="10" Padding="5">
-            <Grid  Margin="20,0,0,0">
-                <Frame BackgroundColor="White" >
-                    <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
-                              TextColor="DarkGray" VerticalOptions="CenterAndExpand" Margin="-20"
-                              TextChanged="Searchbar1TextChanged" Grid.Row="0" Grid.Column="0"/>
-                </Frame>
-            </Grid>
+        <StackLayout Margin="10">
+            <SearchBar Placeholder="Marka, kategori veya dolap ara" BackgroundColor="White" 
+                              TextColor="DarkGray" VerticalOptions="CenterAndExpand"
+                              TextChanged="Searchbar1TextChanged" />
             
             <CarouselView x:Name="Carousel" IndicatorView="IndicatorView"  Margin="20" HeightRequest="350" WidthRequest="350" >
                 <CarouselView.ItemTemplate >
