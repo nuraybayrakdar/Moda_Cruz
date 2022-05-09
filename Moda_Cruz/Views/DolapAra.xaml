@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:bc="clr-namespace:Moda_Cruz.ViewModels"
+             x:Class="Moda_Cruz.Views.DolapAra" BackgroundColor="AliceBlue">
+    <ContentPage.BindingContext>
+        <bc:UrunlerViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Grid.Row="0" >
+                <SearchBar Placeholder=" @dolap ara " BackgroundColor="AliceBlue" 
+                              TextColor="DarkGray" VerticalOptions="CenterAndExpand" Margin="-10"
+                              TextChanged="Dolap_Ara"  />
+            </Frame>
+            <Frame BackgroundColor="AliceBlue">
+                <ListView ItemsSource="{Binding UrunlerList}" IsPullToRefreshEnabled="True" x:Name="Dolaplar" BackgroundColor="AliceBlue"
+                        SeparatorVisibility="None" SeparatorColor="Transparent" Margin="-20">
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Frame HasShadow="True" HeightRequest="50" Grid.Column="0">
+                                        <Image Source="{Binding OwnerPhoto}" HeightRequest="50" WidthRequest="50"
+                                           HorizontalOptions="StartAndExpand" Margin="-20" />
+                                    </Frame>
+                                    <StackLayout HorizontalOptions="StartAndExpand" Grid.Column="1">
+                                        <Label Text="{Binding Owner}"  TextColor="Black" 
+                                           FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

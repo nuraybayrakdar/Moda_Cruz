@@ -24,5 +24,9 @@ namespace Moda_Cruz.Views
             FavDurum.Text = Durum;
             FavBeden.Text = "Beden: " + Beden;
         }
+        public void BackButtonClicked1(object o, EventArgs args)
+        {
+            Navigation.PopModalAsync();
+        }
     }
 }

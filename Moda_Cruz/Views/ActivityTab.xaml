@@ -1,12 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:bc="clr-namespace:Moda_Cruz.ViewModels"
              x:Class="Moda_Cruz.Views.ActivityTab">
+    <ContentPage.BindingContext>
+        <bc:UrunlerViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Frame BackgroundColor="White" Margin="5"   Padding="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                <Grid>
+                    <Label BackgroundColor="Transparent" Text="Aktivite" TextColor="Black" Grid.Row="0" Grid.Column="1"  HorizontalOptions="CenterAndExpand"/>
+                    <ImageButton Source="dolabaGit.png" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" HeightRequest="35" Clicked="DolaplrLV" HorizontalOptions="End"/>
+                </Grid>
+            </Frame>
+            
+            <Frame BackgroundColor="White" Margin="10"   Padding="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                <Grid BackgroundColor="AliceBlue">
+                    <CollectionView ItemsSource="{Binding UrunlerList}" x:Name="cvActivity" SelectionMode="Single" SelectionChanged="ActivitySelection" >
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="5"
+                                         VerticalItemSpacing="5" Span="1"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BackgroundColor="White" Margin="5"   Padding="5">
+                                    <StackLayout Margin="5">
+                                        <Label Text="Yeni ürün ekledi!!" FontAttributes="Bold" TextColor="Black" Margin="5"/>
+                                        <Grid Margin="20,0,0,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions >
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                            </Grid>
+                                            <Frame BorderColor="Black" CornerRadius="50" HeightRequest="40" WidthRequest="40" 
+                                                       Grid.Column="0" Grid.Row="1" IsClippedToBounds="True" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Image Source= "{Binding OwnerPhoto}"  HeightRequest="50" Aspect="AspectFill" Margin="-20" /> 
+                                            </Frame>
+                                            <Label x:Name="ActOwner" Text="{Binding Owner}"  Grid.Row="0" FontAttributes="Bold" TextColor="Black"/>
+                                            <Label x:Name="ActUrun" Text="{Binding Name}"  Grid.Row="0" Grid.Column="1" TextColor="Black" VerticalTextAlignment="End"/>
+                                            <Frame BorderColor="Black" CornerRadius="10" HeightRequest="40" WidthRequest="40" 
+                                                       Grid.Column="1" Grid.Row="1" IsClippedToBounds="True" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Image Source= "{Binding Image}"  HeightRequest="50" Aspect="AspectFill" Margin="-20" />
+                                            </Frame>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
